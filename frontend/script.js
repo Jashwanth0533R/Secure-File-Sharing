@@ -6,6 +6,20 @@ const container = document.getElementById("liquid-bg");
 new AnimatedLiquidBackground({
     target: container
 });
+
+function handleSignin() {
+
+    const token = localStorage.getItem("token");
+
+    // user already logged in
+    if (token && token !== "null") {
+        window.location.href = "user_data.html";
+    } 
+    // user not logged in
+    else {
+        window.location.href = "login/login.html";
+    }
+}
 async function handleSignin() {
 
     const token = localStorage.getItem("token");
