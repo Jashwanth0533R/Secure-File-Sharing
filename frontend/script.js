@@ -1,26 +1,4 @@
-import AnimatedLiquidBackground from 
-"https://framer.com/m/AnimatedLiquidBackground-Prod-vIhm.js@ghH1aHLmGZ0iE7qXDFVk";
-
-const container = document.getElementById("liquid-bg");
-
-new AnimatedLiquidBackground({
-    target: container
-});
-
-function handleSignin() {
-
-    const token = localStorage.getItem("token");
-
-    // user already logged in
-    if (token && token !== "null") {
-        window.location.href = "user_data.html";
-    } 
-    // user not logged in
-    else {
-        window.location.href = "login/login.html";
-    }
-}
-async function handleSignin() {
+document.getElementById("signinBtn").addEventListener("click", async function () {
 
     const token = localStorage.getItem("token");
 
@@ -49,4 +27,4 @@ async function handleSignin() {
     } catch {
         window.location.href = "login/login.html";
     }
-}
+});
