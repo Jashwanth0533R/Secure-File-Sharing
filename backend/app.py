@@ -13,7 +13,19 @@ CORS(app,
      allow_headers=["Content-Type", "Authorization"])
 app.config["JWT_SECRET_KEY"] = JWT_SECRET_KEY
 
+from flask import send_from_directory
 
+@app.route("/")
+def index():
+    return send_from_directory("../frontend", "index.html")
+
+@app.route("/<path:path>")
+def static_files(path):
+    return send_from_directory("../frontend", path)
+
+@app.route("/share.html")
+def share_page():
+    return send_from_directory("../frontend", "share.html")
 jwt = JWTManager(app)
 
 

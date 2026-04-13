@@ -3,7 +3,7 @@ async function loadProfile() {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-        "http://127.0.0.1:5000/profile",
+        "https://endangered-modules-provincial-comparative.trycloudflare.com/profile",
         {
             headers: {
                 "Authorization": "Bearer " + token
@@ -26,7 +26,7 @@ if (!token) {
 async function loadFiles() {
 
     const response = await fetch(
-        "http://127.0.0.1:5000/files",
+        "https://endangered-modules-provincial-comparative.trycloudflare.com/files",
         {
             headers: {
                 "Authorization": "Bearer " + token
@@ -108,7 +108,7 @@ async function downloadFile(fileId){
     }
 
     const response = await fetch(
-        `https://secure-file-sharing-4k5x.onrender.com/download/${fileId}`,
+        `https://endangered-modules-provincial-comparative.trycloudflare.com/download/${fileId}`,
         {
             method: "GET",
             headers: {
@@ -157,7 +157,7 @@ async function deleteFile(fileId){
     if(!confirmDelete) return;
 
     const response = await fetch(
-        `https://secure-file-sharing-4k5x.onrender.com/delete/${fileId}`,
+        `https://endangered-modules-provincial-comparative.trycloudflare.com/delete/${fileId}`,
         {
             method:"DELETE",
             headers:{
@@ -187,7 +187,7 @@ async function generateShareLink(fileId){
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-        `https://secure-file-sharing-4k5x.onrender.com/generate-share-link/${fileId}`,
+        `https://endangered-modules-provincial-comparative.trycloudflare.com/generate-share-link/${fileId}`,
         {
             method:"POST",
             headers:{

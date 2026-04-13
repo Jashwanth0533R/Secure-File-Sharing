@@ -8,6 +8,8 @@ from config import DB_URL
 auth = Blueprint("auth", __name__)
 
 
+from psycopg2 import errors
+
 @auth.route("/register", methods=["POST"])
 def register():
     data = request.json
@@ -15,24 +17,25 @@ def register():
     password = hash_password(data["password"])
     role = data.get("role", "user")
 
-
     conn = psycopg2.connect(DB_URL)
     cur = conn.cursor()
 
+    try:
+        cur.execute(
+            "INSERT INTO users (username, password_hash, role) VALUES (%s, %s, %s)",
+            (username, password, role)
+        )
+        conn.commit()
 
-    cur.execute(
-        "INSERT INTO users (username, password_hash, role) VALUES (%s, %s, %s)",
-        (username, password, role)
-    )
+    except errors.UniqueViolation:
+        conn.rollback()
+        return jsonify({"error": "Account already exists. Please login."}), 400
 
+    finally:
+        cur.close()
+        conn.close()
 
-    conn.commit()
-    cur.close()
-    conn.close()
-
-
-    return jsonify({"message": "User registered successfully"})
-
+    return jsonify({"message": "User registered successfully"}), 200
 
 
 
