@@ -84,30 +84,56 @@ The application provides a simple and user-friendly interface for secure file ma
 ## 📂 Project Structure
 
 ```bash
+
 Secure-File-Sharing-System/
-│
+├── .gitignore
+├── backend
+│   ├── .env
+│   ├── app.py
+│   ├── config.py
+│   ├── models
+│   │   ├── audit_model.py
+│   │   └── file_model.py
+│   ├── requirements.txt
+│   ├── routes
+│   │   ├── auth_routes.py
+│   │   └── file_routes.py
+│   ├── services
+│   │   ├── audit_service.py
+│   │   ├── encryption_service.py
+│   │   ├── s3_services.py
+│   │   └── __init__.py
+│   └── utils
+│       ├── password_hash.py
+│       └── rbac.py
+├── database
+│   └── schema.sql
+├── frontend
+│   ├── about.css
+│   ├── about.html
+│   ├── assets
+│   │   ├── background.mp4
+│   │   └── cloud-logo.gif
+│   ├── dashboard.css
+│   ├── dashboard.js
+│   ├── index.html
+│   ├── login
+│   │   ├── login.css
+│   │   ├── login.html
+│   │   ├── login.js
+│   │   └── register.html
+│   ├── script.js
+│   ├── share.html
+│   ├── style.css
+│   ├── upload.css
+│   ├── upload.html
+│   ├── upload.js
+│   └── user_data.html
+├── README.md
+├── render.yaml
 ├── app.py
 ├── requirements.txt
 ├── README.md
-│
-├── templates/
-│   ├── login.html
-│   ├── register.html
-│   ├── dashboard.html
-│   ├── upload.html
-│   └── files.html
-│
-├── static/
-│   ├── css/
-│   ├── js/
-│   └── uploads/
-│
-├── database/
-│   └── user_data.db
-│
-└── models/
-```
-
 ---
 
 ## ⚙️ Local Setup Instructions
