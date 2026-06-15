@@ -59,7 +59,7 @@
         document.getElementById("passwordField").value;
 
     const response = await fetch(
-        "http://127.0.0.1:5000/login",
+        "https://secure-file-sharing-production-afe1.up.railway.app/login",
         {
             method: "POST",
             headers: {

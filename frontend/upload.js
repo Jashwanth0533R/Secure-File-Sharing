@@ -111,7 +111,7 @@ async function simulateUpload(file) {
     formData.append("file", file);
 
     const response = await fetch(
-        "http://127.0.0.1:5000/upload_s3",
+        "https://secure-file-sharing-production-afe1.up.railway.app/upload_s3",
         {
             method: "POST",
             headers: {
@@ -140,7 +140,7 @@ async function handleSignin() {
 
     try {
         const res = await fetch(
-            "http://127.0.0.1:5000/profile",
+            "https://secure-file-sharing-production-afe1.up.railway.app/profile",
             {
                 headers: {
                     "Authorization": "Bearer " + token
