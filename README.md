@@ -1,322 +1,186 @@
 # 🔐 Secure File Sharing System
 
-![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
 ![Flask](https://img.shields.io/badge/Flask-3.1-black?logo=flask)
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue?logo=postgresql)
 ![JWT](https://img.shields.io/badge/JWT-Authentication-orange)
-![SQLite](https://img.shields.io/badge/Database-SQLite-lightblue?logo=sqlite)
 ![HTML](https://img.shields.io/badge/Frontend-HTML5-orange?logo=html5)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?logo=css3)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript)
-![Deployment](https://img.shields.io/badge/Deployment-Flask-success)
-![Status](https://img.shields.io/badge/Status-Completed-success)
-![License](https://img.shields.io/badge/License-Academic-lightgrey)
+![Vercel](https://img.shields.io/badge/Frontend-Vercel-black?logo=vercel)
+![Railway](https://img.shields.io/badge/Backend-Railway-purple?logo=railway)
+![Status](https://img.shields.io/badge/Status-Live-success)
 
 ---
 
-## 📌 Project Overview
+# 🌐 Live Demo
 
-This project presents a secure web-based file sharing application that allows users to upload, manage, and share files safely over the internet.
+🚀 Production Website:
 
-The system integrates:
-
-- Secure User Authentication using JWT
-- Flask Backend Development
-- SQLite Database Integration
-- REST API Development
-- File Upload & Download Functionality
-- Role-Based Access Control
-
-The application provides a simple and user-friendly interface for secure file management and sharing between authenticated users.
+https://secure-file-sharing-goqn.vercel.app/
 
 ---
 
-## 🚀 Application Features
+# 📌 Project Overview
 
-- 🔐 User Registration & Login System
-- 🔑 JWT-Based Authentication
-- 📁 Secure File Upload & Download
-- 👥 Role-Based Access Control
-- 🗂️ File Permission Management
-- 🌐 REST API Support
-- ⚡ Flask Backend Integration
-- 💾 SQLite Database Support
+Secure File Sharing System is a full-stack web application that enables authenticated users to upload, manage, share, and securely access files through tokenized sharing mechanisms.
+
+The application follows modern web security practices using JWT Authentication, PostgreSQL database storage, role-based access control, and secure file-sharing workflows.
 
 ---
 
-## 🧠 System Workflow
+# 🚀 Features
 
-1. User registers and logs into the system
-2. JWT token is generated for secure authentication
-3. Authenticated users can upload files securely
-4. Files are stored safely in local/cloud storage
-5. Authorized users can access and download files
-6. Access permissions prevent unauthorized usage
-
----
-
-## 🏗️ Technology Stack
-
-### Backend
-- Python 3
-- Flask
-- Flask-JWT-Extended
-- REST APIs
-
-### Frontend
-- HTML
-- CSS
-- JavaScript
-
-### Database
-- SQLite
-
-### Tools & Libraries
-- Werkzeug
-- Requests
-- JWT Authentication
-
-### Deployment
-- Flask Development Server
-- Gunicorn
+* 🔐 User Registration & Login
+* 🔑 JWT Authentication
+* 📁 Secure File Upload
+* 📥 File Download
+* 🔗 Shareable File Links
+* 👥 Role-Based Access Control (RBAC)
+* 📊 User Dashboard
+* 📝 Audit Logging
+* ☁️ AWS S3 File Storage
+* 🐘 PostgreSQL Database
+* 🌐 REST API Architecture
 
 ---
 
-## 📂 Project Structure
+# 🧠 System Workflow
+
+1. User creates an account.
+2. User logs in securely.
+3. JWT token is generated.
+4. Authenticated users upload files.
+5. Files are stored securely.
+6. Share links are generated with unique tokens.
+7. Authorized users access shared files.
+8. Audit logs track user actions.
+
+---
+
+# 🏗️ Technology Stack
+
+## Backend
+
+* Python 3.13
+* Flask
+* Flask-JWT-Extended
+* PostgreSQL
+* Psycopg2
+* Gunicorn
+
+## Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+
+## Database
+
+* PostgreSQL
+
+## Cloud & Storage
+
+* Railway (Backend Hosting)
+* Vercel (Frontend Hosting)
+* AWS S3 Bucket Storage
+
+---
+
+# 🌍 Production Deployment
+
+## Frontend
+
+Hosted on Vercel
+
+https://secure-file-sharing-goqn.vercel.app/
+
+## Backend API
+
+Hosted on Railway
+
+https://secure-file-sharing-production-afe1.up.railway.app/
+
+## Database
+
+Railway PostgreSQL
+
+---
+
+# 📂 Project Structure
 
 ```bash
-
-Secure-File-Sharing-System/
-├── .gitignore
-├── backend
-│   ├── .env
+Secure-File-Sharing/
+│
+├── backend/
 │   ├── app.py
 │   ├── config.py
-│   ├── models
-│   │   ├── audit_model.py
-│   │   └── file_model.py
-│   ├── requirements.txt
-│   ├── routes
-│   │   ├── auth_routes.py
-│   │   └── file_routes.py
-│   ├── services
-│   │   ├── audit_service.py
-│   │   ├── encryption_service.py
-│   │   ├── s3_services.py
-│   │   └── __init__.py
-│   └── utils
-│       ├── password_hash.py
-│       └── rbac.py
-├── database
-│   └── schema.sql
-├── frontend
-│   ├── about.css
-│   ├── about.html
-│   ├── assets
-│   │   ├── background.mp4
-│   │   └── cloud-logo.gif
-│   ├── dashboard.css
-│   ├── dashboard.js
+│   ├── routes/
+│   ├── services/
+│   ├── models/
+│   ├── utils/
+│   └── uploads/
+│
+├── frontend/
 │   ├── index.html
-│   ├── login
-│   │   ├── login.css
-│   │   ├── login.html
-│   │   ├── login.js
-│   │   └── register.html
-│   ├── script.js
-│   ├── share.html
-│   ├── style.css
-│   ├── upload.css
+│   ├── dashboard.js
 │   ├── upload.html
-│   ├── upload.js
-│   └── user_data.html
-├── README.md
-├── render.yaml
-├── app.py
+│   ├── share.html
+│   └── login/
+│
+├── database/
+│   └── schema.sql
+│
 ├── requirements.txt
 ├── README.md
-
-```
-
-
-## ⚙️ Local Setup Instructions
-
-### 1️⃣ Clone Repository
-
-```bash
-git clone https://github.com/Jashwanth0533R/Secure-File-Sharing-System.git
-
-cd Secure-File-Sharing-System
-```
-
-### 2️⃣ Create Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-Activate:
-
-### Windows
-
-```bash
-venv\Scripts\activate
-```
-
-### Mac/Linux
-
-```bash
-source venv/bin/activate
-```
-
-### 3️⃣ Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4️⃣ Run Application
-
-```bash
-python app.py
-```
-
-Open in browser:
-
-```bash
-http://127.0.0.1:5000
+└── render.yaml
 ```
 
 ---
 
-## 🔐 Authentication & Security
+# 🔐 Security Features
 
-The project implements secure authentication mechanisms including:
-
-- JWT Token Authentication
-- Protected Flask Routes
-- Password Validation
-- User Authorization
-- Role-Based Access Control
-- Secure Session Handling
-
-These features ensure safe and secure file sharing between users.
+* JWT-Based Authentication
+* Password Hashing
+* Role-Based Authorization
+* Secure File Access
+* Protected API Endpoints
+* Audit Logging
+* Tokenized Share Links
 
 ---
 
-## 📊 Database Management
+# 📈 Future Enhancements
 
-The application uses SQLite Database for:
-
-- User Registration Data
-- Login Credentials
-- File Information
-- User Permissions
-- Access Management
-
----
-
-## 🌐 REST API Features
-
-The backend APIs handle:
-
-- User Authentication
-- File Upload Requests
-- File Download Requests
-- User Validation
-- Secure Access Handling
+* End-to-End Encryption
+* Multi-Factor Authentication
+* File Expiration Policies
+* Email Notifications
+* Admin Dashboard
+* Docker Deployment
+* AI-Based Threat Detection
 
 ---
 
-## 📸 Application Modules
+# 👨‍💻 Author
 
-### 🔹 Login Module
-Allows users to securely log into the system.
+## Jashwanth Kumar Gutta
 
-### 🔹 Registration Module
-Allows new users to create accounts securely.
+AI & ML Engineer | Backend Developer | Full Stack Developer
 
-### 🔹 File Upload Module
-Authenticated users can upload files securely.
+📧 Email:
+[gjashwanthkumar711@gmail.com](mailto:gjashwanthkumar711@gmail.com)
 
-### 🔹 File Sharing Module
-Files can be shared with authorized users.
-
-### 🔹 Dashboard
-Displays uploaded files and user activities.
-
----
-
-## ☁️ Deployment Configuration
-
-### Build Command
-
-```bash
-pip install -r requirements.txt
-```
-
-### Start Command
-
-```bash
-gunicorn app:app
-```
-
-Application runs on:
-
-```bash
-0.0.0.0:$PORT
-```
-
----
-
-## 📈 Future Enhancements
-
-- End-to-End File Encryption
-- Multi-Factor Authentication
-- Docker Containerization
-- Cloud Storage Integration
-- Admin Dashboard
-- Email Notifications
-- File Expiration Links
-- AI-Based Threat Detection
-
----
-
-## 💡 Learning Outcomes
-
-Through this project, I gained practical experience in:
-
-- Flask Backend Development
-- Authentication Systems
-- REST API Development
-- Database Integration
-- Secure File Handling
-- Web Application Security
-- Full Stack Development
-
----
-
-## 👨‍💻 Author
-
-### Jashwanth Kumar Gutta
-
-AI & ML Student | Backend Developer | Python Programmer
-
-📧 Email: gjashwanthkumar711@gmail.com
-
-🔗 GitHub:  
+GitHub:
 https://github.com/Jashwanth0533R
 
-🔗 LinkedIn:  
+LinkedIn:
 https://www.linkedin.com/in/jashwanth-kumar-g-431477383/
 
 ---
 
-## ⭐ Support
+# ⭐ Live Project
 
-If you found this project useful, consider giving it a ⭐ on GitHub.
+https://secure-file-sharing-goqn.vercel.app/
 
----
-
-## 📜 License
-
-Developed for educational and academic purposes only.
+If you found this project useful, please consider giving it a ⭐ on GitHub.
