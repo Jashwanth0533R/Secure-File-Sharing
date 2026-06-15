@@ -111,7 +111,7 @@ async function simulateUpload(file) {
     formData.append("file", file);
 
     const response = await fetch(
-        "https://endangered-modules-provincial-comparative.trycloudflare.com/upload_s3",
+        "http://127.0.0.1:5000/upload_s3",
         {
             method: "POST",
             headers: {
@@ -140,7 +140,7 @@ async function handleSignin() {
 
     try {
         const res = await fetch(
-            "https://endangered-modules-provincial-comparative.trycloudflare.com/profile",
+            "http://127.0.0.1:5000/profile",
             {
                 headers: {
                     "Authorization": "Bearer " + token

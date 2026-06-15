@@ -297,7 +297,7 @@ def generate_share_link(file_id):
     cur.close()
     conn.close()
 
-    link = f"https://endangered-modules-provincial-comparative.trycloudflare.com/share.html?token={token}"
+    link = f"http://127.0.0.1:5000/share.html?token={token}"
 
     return jsonify({
         "share_link": link,

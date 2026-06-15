@@ -59,7 +59,7 @@
         document.getElementById("passwordField").value;
 
     const response = await fetch(
-        "https://endangered-modules-provincial-comparative.trycloudflare.com/login",
+        "http://127.0.0.1:5000/login",
         {
             method: "POST",
             headers: {
