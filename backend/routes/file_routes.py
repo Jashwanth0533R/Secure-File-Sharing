@@ -297,7 +297,7 @@ def generate_share_link(file_id):
     cur.close()
     conn.close()
 
-    link = f"https://secure-file-sharing-production-afe1.up.railway.app/share.html?token={token}"
+    link = f"https://secure-file-sharing-goqn.vercel.app/share.html?token={token}"
 
     return jsonify({
         "share_link": link,
